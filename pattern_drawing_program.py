@@ -49,10 +49,11 @@ while True:
                 save_file = int(input('Would you like to save the pattern as a text file?\n1. Yes\n2. No'
                                       '\nEnter the number corresponding to your choice: '))
                 if save_file == 1:
-                    for i in range(rows + 1):
-                        print(Fore.RED + f"{'*' * i}")
-                        with open('Red Triangle 1.txt', 'w') as f, contextlib.redirect_stdout(f):
-                            print(Fore.RED + f"{'*' * i}")
+                    with open('Red Triangle 1.txt', 'w') as f:
+                        for i in range(rows + 1):
+                            triangle_line = '*' * i
+                            print(Fore.RED + triangle_line)
+                            f.write(triangle_line + '\n')
                     print(Fore.RESET)
 
                 elif save_file == 2:
