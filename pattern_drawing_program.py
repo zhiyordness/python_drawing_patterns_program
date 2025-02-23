@@ -62,14 +62,36 @@ while True:
                     print(Fore.RESET)
                 break
             elif color == 2:
-                for i in range(rows + 1):
-                    print(Fore.GREEN + f"{'*' * i}")
-                print(Fore.RESET)
+                print()
+                save_file = int(input('Would you like to save the pattern as a text file?\n1. Yes\n2. No'
+                                      '\nEnter the number corresponding to your choice: '))
+                if save_file == 1:
+                    with open('Green Triangle 1.txt', 'w') as f:
+                        for i in range(rows + 1):
+                            triangle_line = '*' * i
+                            print(Fore.GREEN + triangle_line)
+                            f.write(triangle_line + '\n')
+                    print(Fore.RESET)
+                elif save_file == 2:
+                    for i in range(rows + 1):
+                        print(Fore.GREEN + f"{'*' * i}")
+                    print(Fore.RESET)
                 break
             elif color == 3:
-                for i in range(rows + 1):
-                    print(Fore.MAGENTA + f"{'*' * i}")
-                print(Fore.RESET)
+                print()
+                save_file = int(input('Would you like to save the pattern as a text file?\n1. Yes\n2. No'
+                                      '\nEnter the number corresponding to your choice: '))
+                if save_file == 1:
+                    with open('Magenta Triangle 1.txt', 'w') as f:
+                        for i in range(rows + 1):
+                            triangle_line = '*' * i
+                            print(Fore.MAGENTA + triangle_line)
+                            f.write(triangle_line + '\n')
+                    print(Fore.RESET)
+                elif save_file == 2:
+                    for i in range(rows + 1):
+                        print(Fore.MAGENTA + f"{'*' * i}")
+                    print(Fore.RESET)
                 break
             else:
                 print('Invalid choice! Please, choose again!')
